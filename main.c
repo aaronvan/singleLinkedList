@@ -1,12 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <errno.h>
 #include "freak.h"
 #include "freak.c"
 
 int main(int argc, char *argv[]) {
+	if (argc < 2) {
+	    puts("Needs an argument.");
+	    return EXIT_FAILURE;
+	}
+
         char *endptr;
+	errno = 0;
 	long n = strtol(argv[1], &endptr, 10);
+
+	if (errno == ERANGE) {
+	    puts("Number too large/small");
+	    return EXIT_FAILURE;
+	} else if (endptr == argv[1]) {
+	    return EXIT_FAILURE;
+	} else if (*endptr && *endptr != '\n') {
+	    return EXIT_FAILURE;
+	}
 
    	struct node *head = buildList(n);
 #if 0
