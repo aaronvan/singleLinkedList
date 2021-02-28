@@ -1,5 +1,18 @@
 /* freak.c */
 
+struct node *buildList(int size) {
+    struct node *listhead = NULL;
+
+    for (size_t i=0; i<size; i++) {
+	struct node *temp = (struct node *)malloc(sizeof(struct node));
+	assert(temp != NULL);
+	temp->n = i;
+	temp->next = listhead;
+	listhead = temp;
+    }
+    return listhead;
+}
+
 void newBase(int data, struct node *listhead) {
 	struct node *new = (struct node *)malloc(sizeof(struct node));
 	assert(new != NULL);

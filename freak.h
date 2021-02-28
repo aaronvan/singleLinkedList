@@ -6,6 +6,7 @@ struct node {
 	struct node *next;
 };
 
+struct node *buildList(int);
 void printLinkedList(struct node *);
 void newBase(int, struct node *);
 void addToEnd(int, struct node **);
