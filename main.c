@@ -4,8 +4,11 @@
 #include "freak.h"
 #include "freak.c"
 
-int main(void) {
-   	struct node *head = buildList(20);
+int main(int argc, char *argv[]) {
+        char *endptr;
+	long n = strtol(argv[1], &endptr, 10);
+
+   	struct node *head = buildList(n);
 #if 0
 	newBase(88, head);
 	addToEnd(99, &head);
