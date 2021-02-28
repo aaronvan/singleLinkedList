@@ -19,8 +19,10 @@ int main(int argc, char *argv[]) {
 	    puts("Number too large/small");
 	    return EXIT_FAILURE;
 	} else if (endptr == argv[1]) {
+	    puts("No char was read.");
 	    return EXIT_FAILURE;
 	} else if (*endptr && *endptr != '\n') {
+	   puts("Did not convert the entire input.");
 	    return EXIT_FAILURE;
 	}
 
