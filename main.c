@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
 	    puts("No char was read.");
 	    return EXIT_FAILURE;
 	} else if (*endptr && *endptr != '\n') {
-	   puts("Did not convert the entire input.");
+	    puts("Did not convert the entire input.");
 	    return EXIT_FAILURE;
 	}
 
