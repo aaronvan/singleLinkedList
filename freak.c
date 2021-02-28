@@ -34,12 +34,13 @@ void addToEnd(int data, struct node **listhead) {
 }
 
 int count(struct node *listhead) {
-	int num = 0;
-	while (listhead != NULL) {
-		listhead = listhead->next;
-		num++;
+	struct node* current = listhead;
+	int count = 0;
+	while (current != NULL) {
+		count++;
+		current = current->next;
 	}
-	return num;
+	return count;
 }
 
 void printLinkedList(struct node *listhead) {
