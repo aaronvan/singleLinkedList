@@ -3,7 +3,6 @@
 #include <assert.h>
 #include "freak.h"
 #include "freak.c"
-#define SIZE 7
 
 int main(void) {
    	struct node *head = buildList(20);
