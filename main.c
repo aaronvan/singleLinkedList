@@ -16,10 +16,10 @@ int main(int argc, char *argv[]) {
 	long n = strtol(argv[1], &endptr, 10);
 
 	if (errno == ERANGE) {
-	    puts("Number too large/small");
+	    puts("Number is too large/small");
 	    return EXIT_FAILURE;
 	} else if (endptr == argv[1]) {
-	    puts("No char was read.");
+	    puts("Did not read a char.");
 	    return EXIT_FAILURE;
 	} else if (*endptr && *endptr != '\n') {
 	    puts("Did not convert the entire input.");
@@ -27,6 +27,7 @@ int main(int argc, char *argv[]) {
 	}
 
    	struct node *head = buildList(n);
+	assert(head != NULL);
 #if 0
 	newBase(88, head);
 	addToEnd(99, &head);
