@@ -22,12 +22,12 @@ struct node *buildList(int size) {
 }
 
 /*
- * newBase
+ * insertAtBase
  * Purpose: adds a new node to the base of the linked list
  * Args: integer value, pointer to the list head
  * Return: void
  */
-void newBase(int data, struct node *listhead) {
+void insertAtBase(struct node *listhead, int data) {
 	struct node *new = (struct node *)malloc(sizeof(struct node));
 	assert(new != NULL);
 	new->n = data;
@@ -40,12 +40,12 @@ void newBase(int data, struct node *listhead) {
 }
 
 /*
- * addToEnd
- * Purpose: add a node to the end of the list
+ * insertAtFront
+ * Purpose: add a node to the front of the list
  * Args: integer value and pointer to pointer to listhead
  * Return: void
  */
-void addToEnd(int data, struct node **listhead) {
+void insertAtFront(struct node **listhead, int data) {
 	struct node *top = (struct node *)malloc(sizeof(struct node));
 	assert(top != NULL);
 	top->n = data;

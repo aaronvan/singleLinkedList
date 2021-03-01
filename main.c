@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
 	    return EXIT_FAILURE;
 	}
 
-        char *endptr;
+    char *endptr;
 	errno = 0;
 	long n = strtol(argv[1], &endptr, 10);
 
@@ -28,11 +28,11 @@ int main(int argc, char *argv[]) {
 
    	struct node *head = buildList(n);
 	assert(head != NULL);
-#if 0
-	newBase(88, head);
-	addToEnd(99, &head);
+#if 1
+	insertAtBase(head, 65);
+	insertAtFront(&head, 88);
 #endif
-      	int num = count(head);
+    int num = count(head);
 	printLinkedList(head);
 	printf("The count is: %d\n", num);
 		
