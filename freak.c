@@ -1,5 +1,7 @@
 /* freak.c */
 
+#include "freak.h"
+
 /* 
  * buildList
  * Purpose: build a new singly linked list
