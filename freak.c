@@ -15,7 +15,7 @@ struct node *buildList(int size) {
 }
 
 /*
- * insertAtBase
+ * insertAtBase (also tail)
  * Purpose: adds a new node to the base of the linked list
  * Args: integer value, pointer to the list head
  * Return: void
@@ -32,7 +32,7 @@ void insertAtBase(struct node *listhead, int data) {
 }
 
 /*
- * insertAtFront
+ * insertAtFront (also head)
  * Purpose: add a node to the front of the list
  * by changing the value of the pointer
  * Args: integer value and pointer to pointer to listhead
