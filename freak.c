@@ -15,7 +15,6 @@ struct node *buildList(int size) {
 		temp->n = i;
 		temp->next = listhead;
 		listhead = temp;
-		temp = NULL;
     }
     return listhead;
 }

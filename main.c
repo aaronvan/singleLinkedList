@@ -34,11 +34,23 @@ int main(int argc, char *argv[]) {
 		insertAtFront(&head, i+100);
 	}
 #endif
+#if 0
     int num = count(head);
 	printLinkedList(head);
 	printf("The count is: %d\n", num);
-	puts("Pointing to NULL");
-	pointToNull(&head);
+#endif
+#if 1
+	puts("Print the list:");
+	printLinkedList(head);
+	puts("Insert something at the base.");
+	insertAtBase(head, 888);
+	printLinkedList(head);
+	printf("Head still points to: %d\n", head->n);
+	puts("Insert something at the front.");
+	insertAtFront(&head, 1529);
+	printLinkedList(head);
+	printf("Note that head now points to: %d\n", head->n);
+#endif
 		
 	return EXIT_SUCCESS;
 }
