@@ -50,6 +50,10 @@ int main(int argc, char *argv[]) {
 	insertAtFront(&head, 1529);
 	printLinkedList(head);
 	printf("Note that head now points to: %d\n", head->n);
+	deleteList(head);
+	pointToNull(&head);
+	printLinkedList(head);
+	
 #endif
 		
 	return EXIT_SUCCESS;

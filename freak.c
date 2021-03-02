@@ -88,4 +88,19 @@ void printLinkedList(struct node *listhead) {
  */
  void pointToNull(struct node **listheadRef) {
 	 *listheadRef = NULL;
- }
+}
+ 
+ /* 
+  * deleteList
+  * Purpose: clean up the list to avoid memory leaks
+  * Args: pointer to list head
+  * return: void
+  */
+ void deleteList(struct node *listhead) {
+	 struct node *temp;
+	 do {
+		 temp = listhead;
+		 listhead = listhead->next;
+		 free(temp);
+	 } while (listhead != NULL);
+}

@@ -6,6 +6,7 @@ struct node {
 	struct node *next;
 };
 
+void deleteList(struct node *);
 struct node *buildList(int);
 void printLinkedList(struct node *);
 void insertAtBase(struct node *, int);
