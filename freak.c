@@ -1,7 +1,5 @@
 /* freak.c */
 
-#include "freak.h"
-
 /* 
  * buildList
  * Purpose: build a new singly linked list
@@ -12,11 +10,12 @@ struct node *buildList(int size) {
     struct node *listhead = NULL;
 
     for (size_t i=0; i<size; i++) {
-	struct node *temp = (struct node *)malloc(sizeof(struct node));
-	assert(temp != NULL);
-	temp->n = i;
-	temp->next = listhead;
-	listhead = temp;
+		struct node *temp = (struct node *)malloc(sizeof(struct node));
+		assert(temp != NULL);
+		temp->n = i;
+		temp->next = listhead;
+		listhead = temp;
+		temp = NULL;
     }
     return listhead;
 }
@@ -31,8 +30,7 @@ void insertAtBase(struct node *listhead, int data) {
 	struct node *new = (struct node *)malloc(sizeof(struct node));
 	assert(new != NULL);
 	new->n = data;
-	
-	while (listhead != NULL && listhead->next != NULL) {
+	while (listhead->next != NULL) {
 		listhead = listhead->next;
 	}
 	listhead->next = new;
@@ -42,15 +40,16 @@ void insertAtBase(struct node *listhead, int data) {
 /*
  * insertAtFront
  * Purpose: add a node to the front of the list
+ * by changing the value of the pointer
  * Args: integer value and pointer to pointer to listhead
  * Return: void
  */
 void insertAtFront(struct node **listhead, int data) {
-	struct node *top = (struct node *)malloc(sizeof(struct node));
-	assert(top != NULL);
-	top->n = data;
-	top->next = *listhead;
-	*listhead = top;
+	struct node *new = (struct node *)malloc(sizeof(struct node));
+	assert(new != NULL);
+	new->n = data;
+	new->next = *listhead;
+	*listhead = new;
 }
 
 /*

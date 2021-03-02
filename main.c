@@ -28,13 +28,14 @@ int main(int argc, char *argv[]) {
 
    	struct node *head = buildList(n);
 	assert(head != NULL);
-#if 1
+#if 0
 	insertAtBase(head, 65);
 	insertAtFront(&head, 88);
 #endif
     int num = count(head);
 	printLinkedList(head);
 	printf("The count is: %d\n", num);
-		
+	free(head);
+	
 	return EXIT_SUCCESS;
 }
