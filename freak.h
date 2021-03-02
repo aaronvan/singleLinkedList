@@ -11,5 +11,6 @@ void printLinkedList(struct node *);
 void insertAtBase(struct node *, int);
 void insertAtFront(struct node **, int);
 int count(struct node *);
+void pointToNull(struct node **);
 
 #endif

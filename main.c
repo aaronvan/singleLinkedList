@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
 
    	struct node *head = buildList(n);
 	assert(head != NULL);
-#if 1
+#if 0
 	for (size_t i=0; i<=3; i++) {
 		insertAtBase(head, i+100);
 		insertAtFront(&head, i+100);
@@ -37,6 +37,9 @@ int main(int argc, char *argv[]) {
     int num = count(head);
 	printLinkedList(head);
 	printf("The count is: %d\n", num);
+	puts("Pointing to NULL");
+	pointToNull(&head);
+	
 	free(head);
 	
 	return EXIT_SUCCESS;

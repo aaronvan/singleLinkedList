@@ -80,3 +80,13 @@ void printLinkedList(struct node *listhead) {
 		listhead = listhead->next;
 	}
 }
+
+/*
+ * makeNull
+ * Purpose: set the list to NULL
+ * Args: pointer to the list head
+ * Return: void
+ */
+ void pointToNull(struct node **listheadRef) {
+	 *listheadRef = NULL;
+ }
