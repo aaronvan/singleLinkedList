@@ -25,20 +25,15 @@ int main(int argc, char *argv[]) {
 	    puts("Did not convert the entire input.");
 	    return EXIT_FAILURE;
 	}
-
    	struct node *head = buildList(n);
 	assert(head != NULL);
-#if 0
-	for (size_t i=0; i<=3; i++) {
-		insertAtBase(head, i+100);
-		insertAtFront(&head, i+100);
-	}
-#endif
+
 #if 0
     int num = count(head);
 	printLinkedList(head);
 	printf("The count is: %d\n", num);
 #endif
+
 #if 1
 	puts("Print the list:");
 	printLinkedList(head);
@@ -53,7 +48,6 @@ int main(int argc, char *argv[]) {
 	deleteList(head);
 	pointToNull(&head);
 	printLinkedList(head);
-	
 #endif
 		
 	return EXIT_SUCCESS;

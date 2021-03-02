@@ -8,13 +8,8 @@
  */
 struct node *buildList(int size) {
     struct node *listhead = NULL;
-
     for (size_t i=0; i<size; i++) {
-		struct node *temp = (struct node *)malloc(sizeof(struct node));
-		assert(temp != NULL);
-		temp->n = i;
-		temp->next = listhead;
-		listhead = temp;
+		insertAtFront(&listhead, i);
     }
     return listhead;
 }
