@@ -44,12 +44,12 @@ void insertAtBase(struct node *listhead, int data) {
  * Args: integer value and pointer to pointer to listhead
  * Return: void
  */
-void insertAtFront(struct node **listhead, int data) {
+void insertAtFront(struct node **listheadRef, int data) {
 	struct node *new = (struct node *)malloc(sizeof(struct node));
 	assert(new != NULL);
 	new->n = data;
-	new->next = *listhead;
-	*listhead = new;
+	new->next = *listheadRef;
+	*listheadRef = new;
 }
 
 /*

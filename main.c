@@ -28,9 +28,11 @@ int main(int argc, char *argv[]) {
 
    	struct node *head = buildList(n);
 	assert(head != NULL);
-#if 0
-	insertAtBase(head, 65);
-	insertAtFront(&head, 88);
+#if 1
+	for (size_t i=0; i<=3; i++) {
+		insertAtBase(head, i+100);
+		insertAtFront(&head, i+100);
+	}
 #endif
     int num = count(head);
 	printLinkedList(head);
