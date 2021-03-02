@@ -39,8 +39,6 @@ int main(int argc, char *argv[]) {
 	printf("The count is: %d\n", num);
 	puts("Pointing to NULL");
 	pointToNull(&head);
-	
-	free(head);
-	
+		
 	return EXIT_SUCCESS;
 }
