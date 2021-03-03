@@ -10,7 +10,7 @@ void deleteList(struct node *);
 struct node *buildList(int);
 void printLinkedList(struct node *);
 void insertAtBase(struct node *, int);
-void insertAtFront(struct node **, int);
+void push(struct node **, int);
 int count(struct node *);
 void pointToNull(struct node **);
 

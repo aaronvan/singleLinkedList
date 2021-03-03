@@ -28,13 +28,13 @@ int main(int argc, char *argv[]) {
    	struct node *head = buildList(n);
 	assert(head != NULL);
 
-#if 0
+#if 1
     int num = count(head);
 	printLinkedList(head);
 	printf("The count is: %d\n", num);
 #endif
 
-#if 1
+#if 0
 	puts("Print the list:");
 	printLinkedList(head);
 	puts("Insert something at the base.");
@@ -42,7 +42,7 @@ int main(int argc, char *argv[]) {
 	printLinkedList(head);
 	printf("Head still points to: %d\n", head->n);
 	puts("Insert something at the front.");
-	insertAtFront(&head, 1529);
+	push(&head, 1529);
 	printLinkedList(head);
 	printf("Note that head now points to: %d\n", head->n);
 	deleteList(head);

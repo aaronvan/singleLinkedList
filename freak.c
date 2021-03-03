@@ -9,9 +9,24 @@
 struct node *buildList(int size) {
     struct node *listhead = NULL;
     for (size_t i=0; i<size; i++) {
-		insertAtFront(&listhead, i);
+		push(&listhead, i);
     }
     return listhead;
+}
+
+/*
+ * push (also head)
+ * Purpose: add a node to the front of the list
+ * by changing the value of the pointer
+ * Args: integer value and pointer to pointer to listhead
+ * Return: void
+ */
+void push(struct node **listheadRef, int data) {
+	struct node *new = (struct node *)malloc(sizeof(struct node));
+	assert(new != NULL);
+	new->n = data;
+	new->next = *listheadRef;
+	*listheadRef = new;
 }
 
 /*
@@ -31,19 +46,19 @@ void insertAtBase(struct node *listhead, int data) {
 	new->next = NULL;
 }
 
-/*
- * insertAtFront (also head)
- * Purpose: add a node to the front of the list
- * by changing the value of the pointer
- * Args: integer value and pointer to pointer to listhead
- * Return: void
- */
-void insertAtFront(struct node **listheadRef, int data) {
-	struct node *new = (struct node *)malloc(sizeof(struct node));
-	assert(new != NULL);
-	new->n = data;
-	new->next = *listheadRef;
-	*listheadRef = new;
+ /* 
+  * deleteList
+  * Purpose: clean up the list to avoid memory leaks
+  * Args: pointer to list head
+  * return: void
+  */
+ void deleteList(struct node *listhead) {
+	 struct node *temp;
+	 do {
+		 temp = listhead;
+		 listhead = listhead->next;
+		 free(temp);
+	 } while (listhead != NULL);
 }
 
 /*
@@ -83,19 +98,4 @@ void printLinkedList(struct node *listhead) {
  */
  void pointToNull(struct node **listheadRef) {
 	 *listheadRef = NULL;
-}
- 
- /* 
-  * deleteList
-  * Purpose: clean up the list to avoid memory leaks
-  * Args: pointer to list head
-  * return: void
-  */
- void deleteList(struct node *listhead) {
-	 struct node *temp;
-	 do {
-		 temp = listhead;
-		 listhead = listhead->next;
-		 free(temp);
-	 } while (listhead != NULL);
 }
